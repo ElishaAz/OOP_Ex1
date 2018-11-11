@@ -70,22 +70,11 @@ class MonomTest
 		Monom m1 = new Monom(3,1);
 		Monom m2 = new Monom(3,1);
 		Monom m3 = new Monom(12,37);
-		if (m1.derivative() != (m1.derivative()))
-		{
-			fail("derivative is inconsistent");
-		}
-		if (m1.derivative() != (m2.derivative()))
-		{
-			fail("derivative is object-specific");
-		}
-		if (m1.derivative() == (m3.derivative()))
-		{
-			fail("derivative is same for non-equal objects");
-		}
-		if (m1.derivative() == (m3.derivative()))
-		{
-			fail("derivative is the same in two different points");
-		}
+		assertEquals(m1.derivative(),m1.derivative(),"derivative is inconsistent");
+
+		assertEquals(m1.derivative(),m2.derivative(),"derivative is object-specific");
+
+		assertNotEquals(m1.derivative(), m3.derivative(),"derivative is same for non-equal objects");
 	}
 
 	@Test
