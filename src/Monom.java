@@ -72,7 +72,10 @@ public class Monom implements function
 				if (xIndex == 0) // if there is nothing before the x
 				{
 					coefficient = 1;
-				} else
+				} else if (exp.substring(0, xIndex).trim().equals("-"))
+				{
+					coefficient = -1;
+				}else
 				{
 					coefficient = Double.parseDouble(exp.substring(0, xIndex).trim());
 				}
@@ -203,6 +206,8 @@ public class Monom implements function
 		{
 			if (get_coefficient() == 1)
 				return "x"; // x
+			else if (get_coefficient() == -1)
+				return "-x"; // -x
 			else
 				return coefficient + "x"; // ax
 		}
