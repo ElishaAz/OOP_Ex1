@@ -57,7 +57,7 @@ public class Polynom implements Polynom_able
 	 */
 	private void sort()
 	{
-		this.data.sort(new Monom_Comperator());
+		this.data.sort(new Monom_Comperator().reversed());
 	}
 
 	@Override
